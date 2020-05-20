@@ -40,6 +40,7 @@
                         <th>Name</th>
                         <th>Phone Number</th>
                         <th>Message</th>
+                        <th>Action</th>
                     </tr>
                     <?php 
 
@@ -56,6 +57,9 @@
                         <td><?php echo $row['name'];?></td>
                         <td><?php echo $row['phonenumber'];?></td>
                         <td><?php echo $row['message'];?></td>
+                        <td>
+                                <a href="edit.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Edit</a>
+                        </td>
                     </tr>
                     <?php
                     
