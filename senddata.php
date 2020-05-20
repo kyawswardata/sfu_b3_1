@@ -11,12 +11,15 @@
        die("Error:". mysqli_connect_error());
     }
 
-    $name = $_POST['name'];
-    $phonenumber = $_POST['phonenumber'];
-    $message = $_POST['message'];
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+        $name = $_POST['name'];
+        $phonenumber = $_POST['phonenumber'];
+        $message = $_POST['message'];
 
-    $sql = "INSERT INTO user(name,phonenumber,message) VALUES('$name','$phonenumber','$message')";
-    $result = mysqli_query($con,$sql);
+        $sql = "INSERT INTO user(name,phonenumber,message) VALUES('$name','$phonenumber','$message')";
+        $result = mysqli_query($con,$sql);
+    }
 
     // if($result){
     //     echo "Save Successfully.";

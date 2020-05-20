@@ -14,7 +14,7 @@
 
     $sql = "SELECT * FROM user WHERE id=".$id;
     $resultData = mysqli_query($con,$sql);
-    $row = mysqli_fetch_assoc($resultData);
+    $row = mysqli_fetch_assoc($resultData); //
     // print_r($row);
     
 ?>
@@ -30,7 +30,7 @@
    <div class="container">
     <div class="row">
         <div class="col-md-12">
-        <form action="update.php" method="post">
+        <form action="update.php?id=<?php echo $row['id'];?>" method="post">
         <div class="form-group">
         <label for="name">Name</label>
         <input type="text"
@@ -46,7 +46,7 @@
         <div class="form-group">
         <label for="message">Your Message</label>
         <textarea class="form-control" name="message" id="message" rows="3">
-        <?php echo $row['name'];?>
+        <?php echo $row['message'];?>
         </textarea>
         </div>
         <input type="submit" value="Send" class="btn btn-light">
